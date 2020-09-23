@@ -105,8 +105,8 @@ window.addEventListener("load", () => {
     } else {
       const newBook = new Book(titleInput.value, authorInput.value, yearInput.value); // Instance for book class
 
-      UI.createBookItem(newBook);
-      Store.addBook(newBook);
+      UI.createBookItem(newBook); // Call createBookItem method with "newBook" instance passed in
+      Store.addBook(newBook); // Call createBookItem method with "newBook" instance passed in
       UI.clearInputFields();
     }
   });
