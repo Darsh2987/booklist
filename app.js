@@ -29,9 +29,13 @@ class UI {
     bookListItem.setAttribute("title", book.title); // set attribute to the li element, needed for the delete button
 
     bookListItem.innerHTML = `
-      ${book.title} was written by ${book.author} in the year ${book.year} <button class="deleteitem btn btn-danger" onclick="UI.deleteItem(this)">Delete</button>
+      ${book.title} was written by ${book.author} in the year ${book.year} <button class="deleteitem btn btn-danger">Delete</button>
     `; // Creating the innerHTML of the li element with the data for the new Book constructor instance
     bookList.appendChild(bookListItem); // Append li element to the DOM ul element
+    // Click event for Delete button
+    document.querySelector(".deleteitem").addEventListener("click", (e) => {
+      UI.deleteItem(e.target);
+    });
   }
 
   // Static method for the delete button - called from the delete button inline "onclick" function
